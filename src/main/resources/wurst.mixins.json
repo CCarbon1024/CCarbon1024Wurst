@@ -1,0 +1,39 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.wurstclient.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "wurst.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "DeathScreenMixin",
+    "BlockMixin",
+    "BlockEntityRenderDispatcherMixin",
+    "BackgroundRendererMixin",
+    "CactusBlockMixin",
+    "ClientPlayerEntityMixin",
+    "BlockModelRendererMixin",
+    "MouseMixin",
+    "ScreenMixin",
+    "KeyboardMixin",
+    "GameRendererMixin",
+    "ClientPlayerInteractionManagerMixin",
+    "AbstractBlockStateMixin",
+    "ChatScreenMixin",
+    "FluidRendererMixin",
+    "ChunkOcclusionGraphBuilderMixin",
+    "GameMenuScreenMixin",
+    "ForgeIngameGuiMixin",
+    "IngameHudMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "MinecraftClientMixin",
+    "KeyBindingMixin",
+    "TitleScreenMixin",
+    "CustomPayloadC2SPacketAccessor",
+    "WorldMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
