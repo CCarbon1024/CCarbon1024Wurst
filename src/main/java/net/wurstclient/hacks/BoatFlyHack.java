@@ -12,6 +12,7 @@ import net.wurstclient.Category;
 import net.wurstclient.SearchTags;
 import net.wurstclient.events.UpdateListener;
 import net.wurstclient.hack.Hack;
+import net.wurstclient.util.ChatUtils;
 
 @SearchTags({"BoatFlight", "boat fly", "boat flight"})
 public final class BoatFlyHack extends Hack implements UpdateListener {
@@ -33,7 +34,7 @@ public final class BoatFlyHack extends Hack implements UpdateListener {
     @Override
     public void onUpdate() {
         // check if in boat
-        if (!MC.player.isRowingBoat() || !MC.player.isRidingHorse()) {
+        if (MC.player.getRidingEntity() == null) {
             return;
         }
 

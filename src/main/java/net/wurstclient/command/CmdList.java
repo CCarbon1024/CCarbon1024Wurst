@@ -26,6 +26,8 @@ public final class CmdList
 
 	public final DamageCmd damageCmd = new DamageCmd();
 	public final InvseeCmd invseeCmd = new InvseeCmd();
+	public final GetPosCmd getPosCmd = new GetPosCmd();
+	public final TpCmd tpCmd = new TpCmd();
 
 	/*
 	public final AddAltCmd addAltCmd = new AddAltCmd();
@@ -44,7 +46,6 @@ public final class CmdList
 	public final FeaturesCmd featuresCmd = new FeaturesCmd();
 	public final FollowCmd followCmd = new FollowCmd();
 
-	public final GetPosCmd getPosCmd = new GetPosCmd();
 	public final GiveCmd giveCmd = new GiveCmd();
 	public final GmCmd gmCmd = new GmCmd();
 	public final GoToCmd goToCmd = new GoToCmd();
@@ -68,7 +69,6 @@ public final class CmdList
 	public final TacoCmd tacoCmd = new TacoCmd();
 	public final TCmd tCmd = new TCmd();
 	public final TooManyHaxCmd tooManyHaxCmd = new TooManyHaxCmd();
-	public final TpCmd tpCmd = new TpCmd();
 	public final UnbindCmd unbindCmd = new UnbindCmd();
 	*/
 

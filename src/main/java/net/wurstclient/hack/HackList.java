@@ -10,9 +10,7 @@ package net.wurstclient.hack;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.ReportedException;
 import net.wurstclient.WurstClient;
-import net.wurstclient.addhacks.AutoUseOffHandItemHack;
-import net.wurstclient.addhacks.DeadPointHack;
-import net.wurstclient.addhacks.HeadHack;
+import net.wurstclient.addhacks.*;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.UpdateListener;
 import net.wurstclient.hacks.*;
@@ -83,6 +81,9 @@ public final class HackList implements UpdateListener
 	public final AntiCactusHack antiCactusHack = new AntiCactusHack();
 	public final NoClipHack noClipHack = new NoClipHack();
 	public final AutoReconnectHack autoReconnectHack = new AutoReconnectHack();
+	public final VehicleSpeedHack vehicleSpeedHack = new VehicleSpeedHack();
+	public final ClickTpHack clickTpHack = new ClickTpHack();
+	public final KillauraHack killauraHack = new KillauraHack();
 
 	/*
 	public final AntiAfkHack antiAfkHac1k = new AntiAfkHack();
@@ -142,7 +143,6 @@ public final class HackList implements UpdateListener
 
 	public final KaboomHack kaboomHack = new KaboomHack();
 	public final KillauraLegitHack killauraLegitHack = new KillauraLegitHack();
-	public final KillauraHack killauraHack = new KillauraHack();
 	public final KillPotionHack killPotionHack = new KillPotionHack();
 	public final LiquidsHack liquidsHack = new LiquidsHack();
 	public final LsdHack lsdHack = new LsdHack();
@@ -195,6 +195,7 @@ public final class HackList implements UpdateListener
 	public final AutoUseOffHandItemHack autoUseOffHandItemHack = new AutoUseOffHandItemHack();
 	public final HeadHack headHack = new HeadHack();
 	public final DeadPointHack deadPointHack = new DeadPointHack();
+	public final AntiLevitationHack antiLevitationHack = new AntiLevitationHack();
 
 	private final TreeMap<String, Hack> hax =
 		new TreeMap<>(String::compareToIgnoreCase);

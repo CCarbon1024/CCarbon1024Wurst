@@ -8,6 +8,7 @@
   ],
   "client": [
     "DeathScreenMixin",
+    "DisconnectedScreenMixin",
     "BlockMixin",
     "BlockEntityRenderDispatcherMixin",
     "BackgroundRendererMixin",
@@ -31,7 +32,8 @@
     "KeyBindingMixin",
     "TitleScreenMixin",
     "CustomPayloadC2SPacketAccessor",
-    "WorldMixin"
+    "WorldMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

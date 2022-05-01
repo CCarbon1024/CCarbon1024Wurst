@@ -21,7 +21,7 @@ public final class AutoUseOffHandItemHack extends Hack implements UpdateListener
             "onHungry", "Eat you offHand items when you are hungry.", true);
 
     public AutoUseOffHandItemHack() {
-        super("AutoUseOffHand", "Auto Use your OffHand Item");
+        super("AutoOffHand", "Auto Use your OffHand Item");
         setCategory(Category.COMBAT);
         addSetting(onHungry);
     }
