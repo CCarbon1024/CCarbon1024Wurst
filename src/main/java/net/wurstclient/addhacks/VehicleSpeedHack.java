@@ -8,6 +8,7 @@
 package net.wurstclient.addhacks;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.vector.Vector3d;
 import net.wurstclient.Category;
 import net.wurstclient.SearchTags;
 import net.wurstclient.events.UpdateListener;
@@ -18,8 +19,12 @@ import net.wurstclient.settings.SliderSetting;
 public final class VehicleSpeedHack extends Hack implements UpdateListener {
 
     private final SliderSetting Speed =
-            new SliderSetting("Move speed", "Horizontal movement factor.", 2, 1,
-                    10, 0.01, SliderSetting.ValueDisplay.DECIMAL);
+            new SliderSetting("Move speed", "Horizontal movement factor.", 10, 0,
+                    50, 0.1, SliderSetting.ValueDisplay.DECIMAL);
+
+    private final SliderSetting verticalSpeed =
+            new SliderSetting("vertical-speed", "Vertical speed in blocks.", 6, 0,
+                    20, 0.01, SliderSetting.ValueDisplay.DECIMAL);
 
     private final SliderSetting fallSpeed = new SliderSetting("Fall speed",
             0.1, 0, 1, 0.005,
@@ -28,8 +33,9 @@ public final class VehicleSpeedHack extends Hack implements UpdateListener {
     public VehicleSpeedHack() {
         super("VehicleSpeed", "A better Boat Fly");
         setCategory(Category.MOVEMENT);
-        addSetting(fallSpeed);
+        addSetting(verticalSpeed);
         addSetting(Speed);
+        addSetting(fallSpeed);
     }
 
     @Override
@@ -49,14 +55,19 @@ public final class VehicleSpeedHack extends Hack implements UpdateListener {
             return;
         }
 
-        float yaw = MC.player.rotationYaw;
-        MC.player.getRidingEntity().rotationYaw = yaw;
+        MC.player.getRidingEntity().rotationYaw = MC.player.rotationYaw;
+        Entity vehicle = MC.player.getRidingEntity();
+        Vector3d vel = vehicle.getMotion();
+
+        double motionX = MC.gameSettings.keyBindForward.isKeyDown() ? Speed.getValue() / 20 * vel.getX() : 0;
+        double motionZ = MC.gameSettings.keyBindForward.isKeyDown() ? Speed.getValue() / 20 * vel.getZ() : 0;
+
+        double motionY = 0;
+        if (MC.gameSettings.keyBindJump.isPressed()) motionY += verticalSpeed.getValue() / 20;
+        if (MC.gameSettings.keyBindSneak.isPressed()) motionY -= verticalSpeed.getValue() / 20;
+        else motionY -= fallSpeed.getValue() / 20;
 
         // speed
-        Entity vehicle = MC.player.getRidingEntity();
-        double motionY = MC.gameSettings.keyBindJump.isKeyDown() ? 0.3 : 0;
-        vehicle.setVelocity(Speed.getValue() * vehicle.getMotion().getX(),
-                -fallSpeed.getValue() + motionY,
-                Speed.getValue() * vehicle.getMotion().getZ());
+        vehicle.setVelocity(motionX, motionY, motionZ);
     }
 }

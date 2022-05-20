@@ -116,6 +116,7 @@ public final class TriggerBotHack extends Hack implements UpdateListener
         // disable other killauras
         WURST.getHax().multiAuraHack.setEnabled(false);
         WURST.getHax().tpAuraHack.setEnabled(false);
+        WURST.getHax().killauraHack.setEnabled(false);
 
         EVENTS.add(UpdateListener.class, this);
     }

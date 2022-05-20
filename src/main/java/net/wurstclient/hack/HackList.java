@@ -84,6 +84,7 @@ public final class HackList implements UpdateListener
 	public final VehicleSpeedHack vehicleSpeedHack = new VehicleSpeedHack();
 	public final ClickTpHack clickTpHack = new ClickTpHack();
 	public final KillauraHack killauraHack = new KillauraHack();
+	public final CreativeFlightHack creativeFlightHack = new CreativeFlightHack();
 
 	/*
 	public final AntiAfkHack antiAfkHac1k = new AntiAfkHack();

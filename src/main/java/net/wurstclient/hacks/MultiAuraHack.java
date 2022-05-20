@@ -63,7 +63,7 @@ public final class MultiAuraHack extends Hack implements UpdateListener
             new SliderSetting("FOV", 360, 30, 360, 10, ValueDisplay.DEGREES);
 
     private final CheckboxSetting filterPlayers = new CheckboxSetting(
-            "Filter players", "Won't attack other players.", false);
+            "Filter players", "Won't attack other players.", true);
     private final CheckboxSetting filterSleeping = new CheckboxSetting(
             "Filter sleeping", "Won't attack sleeping players.", false);
     private final SliderSetting filterFlying =
@@ -147,6 +147,7 @@ public final class MultiAuraHack extends Hack implements UpdateListener
         // disable other killauras
         WURST.getHax().tpAuraHack.setEnabled(false);
         WURST.getHax().triggerBotHack.setEnabled(false);
+        WURST.getHax().killauraHack.setEnabled(false);
 
         timer = 0;
         EVENTS.add(UpdateListener.class, this);

@@ -131,6 +131,7 @@ public final class TpAuraHack extends Hack implements UpdateListener {
         // disable other killauras
         WURST.getHax().triggerBotHack.setEnabled(false);
         WURST.getHax().multiAuraHack.setEnabled(false);
+        WURST.getHax().killauraHack.setEnabled(false);
 
         EVENTS.add(UpdateListener.class, this);
     }

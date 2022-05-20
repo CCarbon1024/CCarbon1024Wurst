@@ -73,7 +73,7 @@ public final class KillauraHack extends Hack
             true);
 
     private final CheckboxSetting filterPlayers = new CheckboxSetting(
-            "Filter players", "Won't attack other players.", false);
+            "Filter players", "Won't attack other players.", true);
 
     private final CheckboxSetting filterSleeping =
             new CheckboxSetting("Filter sleeping",
