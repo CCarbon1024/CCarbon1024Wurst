@@ -197,6 +197,7 @@ public final class HackList implements UpdateListener
 	public final HeadHack headHack = new HeadHack();
 	public final DeadPointHack deadPointHack = new DeadPointHack();
 	public final AntiLevitationHack antiLevitationHack = new AntiLevitationHack();
+	public final AutoClickHack autoClickHack = new AutoClickHack();
 
 	private final TreeMap<String, Hack> hax =
 		new TreeMap<>(String::compareToIgnoreCase);

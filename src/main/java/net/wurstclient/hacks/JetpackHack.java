@@ -27,6 +27,7 @@ public final class JetpackHack extends Hack implements UpdateListener
 	public void onEnable()
 	{
 		WURST.getHax().flightHack.setEnabled(false);
+		WURST.getHax().creativeFlightHack.setEnabled(false);
 		EVENTS.add(UpdateListener.class, this);
 	}
 	

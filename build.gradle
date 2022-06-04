@@ -15,10 +15,10 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'net'
-version = '1.0-SNAPSHOT'
+version = '1.4'
 
 java {
-    archivesBaseName = 'wurst'
+    archivesBaseName = 'Wurst'
     toolchain.languageVersion = JavaLanguageVersion.of(8)
 }
 
