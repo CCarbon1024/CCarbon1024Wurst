@@ -9,6 +9,9 @@ package net.wurstclient.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.PlayerController;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -24,8 +27,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerController.class)
 public abstract class ClientPlayerInteractionManagerMixin
-        implements IClientPlayerInteractionManager
-{
+        implements IClientPlayerInteractionManager {
     @Shadow
     private Minecraft mc;
     @Shadow
@@ -43,10 +45,9 @@ public abstract class ClientPlayerInteractionManagerMixin
     @Inject(at = {@At("HEAD")},
             method = {"getBlockReachDistance()F"},
             cancellable = true)
-    private void onGetReachDistance(CallbackInfoReturnable<Float> ci)
-    {
+    private void onGetReachDistance(CallbackInfoReturnable<Float> ci) {
         HackList hax = WurstClient.INSTANCE.getHax();
-        if(hax == null || !hax.reachHack.isEnabled())
+        if (hax == null || !hax.reachHack.isEnabled())
             return;
 
         ci.setReturnValue(hax.reachHack.getReachDistance());
@@ -55,40 +56,44 @@ public abstract class ClientPlayerInteractionManagerMixin
     @Inject(at = {@At("HEAD")},
             method = {"extendedReach()Z"},
             cancellable = true)
-    private void hasExtendedReach(CallbackInfoReturnable<Boolean> cir)
-    {
+    private void hasExtendedReach(CallbackInfoReturnable<Boolean> cir) {
         HackList hax = WurstClient.INSTANCE.getHax();
-        if(hax == null || !hax.reachHack.isEnabled())
+        if (hax == null || !hax.reachHack.isEnabled())
             return;
 
         cir.setReturnValue(true);
     }
+
     @Override
-    public float getCurrentBreakingProgress()
-    {
+    public float getCurrentBreakingProgress() {
         return curBlockDamageMP;
     }
 
     @Override
-    public void setBlockHitDelay(int delay)
-    {
+    public void setBlockHitDelay(int delay) {
         blockHitDelay = delay;
     }
 
     @Override
     public void sendPlayerActionC2SPacket(CPlayerDiggingPacket.Action action, BlockPos blockPos,
-                                          Direction direction)
-    {
+                                          Direction direction) {
         sendDiggingPacket(action, blockPos, direction);
     }
 
     @Shadow
     private void sendDiggingPacket(
             CPlayerDiggingPacket.Action playerActionC2SPacket$Action_1,
-            BlockPos blockPos_1, Direction direction_1)
-    {
+            BlockPos blockPos_1, Direction direction_1) {
 
     }
 
 
+    @Override
+    public ItemStack windowClick_PICKUP(int slot) {
+        return windowClick(0, slot, 0, ClickType.PICKUP, mc.player);
+    }
+
+    @Shadow
+    public abstract ItemStack windowClick(int windowId, int slotId, int mouseButton,
+                                          ClickType type, PlayerEntity player);
 }

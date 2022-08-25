@@ -85,6 +85,8 @@ public final class HackList implements UpdateListener
 	public final ClickTpHack clickTpHack = new ClickTpHack();
 	public final KillauraHack killauraHack = new KillauraHack();
 	public final CreativeFlightHack creativeFlightHack = new CreativeFlightHack();
+	public final AutoTotemHack autoTotemHack = new AutoTotemHack();
+	public final AutoLeaveHack autoLeaveHack = new AutoLeaveHack();
 
 	/*
 	public final AntiAfkHack antiAfkHac1k = new AntiAfkHack();
@@ -93,7 +95,6 @@ public final class HackList implements UpdateListener
 	public final AutoArmorHack autoArmorHack = new AutoArmorHack();
 	public final AutoBuildHack autoBuildHack = new AutoBuildHack();
 	public final AutoDropHack autoDropHack = new AutoDropHack();
-	public final AutoLeaveHack autoLeaveHack = new AutoLeaveHack();
 	public final AutoFarmHack autoFarmHack = new AutoFarmHack();
 	public final AutoFishHack autoFishHack = new AutoFishHack();
 	public final AutoMineHack autoMineHack = new AutoMineHack();
@@ -106,7 +107,6 @@ public final class HackList implements UpdateListener
 	public final AutoSwitchHack autoSwitchHack = new AutoSwitchHack();
 	public final AutoSwordHack autoSwordHack = new AutoSwordHack();
 	public final AutoToolHack autoToolHack = new AutoToolHack();
-	public final AutoTotemHack autoTotemHack = new AutoTotemHack();
 	public final BaseFinderHack baseFinderHack = new BaseFinderHack();
 	public final BlinkHack blinkHack = new BlinkHack();
 	public final BonemealAuraHack bonemealAuraHack = new BonemealAuraHack();
@@ -153,10 +153,11 @@ public final class HackList implements UpdateListener
 	public final NameTagsHack nameTagsHack = new NameTagsHack();
 	*/
 
-	/*
 
-	public final NoFireOverlayHack noFireOverlayHack = new NoFireOverlayHack();
+
+//	public final NoFireOverlayHack noFireOverlayHack = new NoFireOverlayHack();
 	public final NoHurtcamHack noHurtcamHack = new NoHurtcamHack();
+	/*
 	public final NoOverlayHack noOverlayHack = new NoOverlayHack();
 	public final NukerHack nukerHack = new NukerHack();
 	public final NukerLegitHack nukerLegitHack = new NukerLegitHack();
