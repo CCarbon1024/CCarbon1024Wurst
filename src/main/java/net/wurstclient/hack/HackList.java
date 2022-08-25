@@ -36,7 +36,6 @@ public final class HackList implements UpdateListener
 	public final FullbrightHack fullbrightHack = new FullbrightHack();
 	public final NavigatorHack navigatorHack = new NavigatorHack();
 	public final RadarHack radarHack = new RadarHack();
-
 	public final RainbowUiHack rainbowUiHack = new RainbowUiHack();
 	public final TooManyHaxHack tooManyHaxHack = new TooManyHaxHack();
 	public final JetpackHack jetpackHack = new JetpackHack();
@@ -56,7 +55,6 @@ public final class HackList implements UpdateListener
 	public final MileyCyrusHack mileyCyrusHack = new MileyCyrusHack();
 	public final MobEspHack mobEspHack = new MobEspHack();
 	public final NoBackgroundHack noBackgroundHack = new NoBackgroundHack();
-
 	public final GlideHack glideHack = new GlideHack();
 	public final TriggerBotHack triggerBotHack = new TriggerBotHack();
 	public final BoatFlyHack boatFlyHack = new BoatFlyHack();
@@ -73,7 +71,6 @@ public final class HackList implements UpdateListener
 	public final PortalGuiHack portalGuiHack = new PortalGuiHack();
 	public final FastPlaceHack fastPlaceHack = new FastPlaceHack();
 	public final FastBreakHack fastBreakHack = new FastBreakHack();
-
 	public final NoWeatherHack noWeatherHack = new NoWeatherHack();
 	public final NoWebHack noWebHack = new NoWebHack();
 	public final AntiWobbleHack antiWobbleHack = new AntiWobbleHack();
