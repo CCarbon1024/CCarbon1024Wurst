@@ -39,14 +39,5 @@ public class FMLHandshakeMessagesMixin {
                 mods.remove(i);
             }
         }
-        this.mods.add("\u00A74Don't too much matter this.");
-
-        for (int j = 0; j < 4; j++) {
-            String aLotEnter = "";
-            for (int i = 0; i < 255; i++) {
-                aLotEnter += "\n";
-            }
-            this.mods.add(aLotEnter);
-        }
     }
 }
